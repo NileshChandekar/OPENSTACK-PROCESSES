@@ -1,9 +1,8 @@
-===========================================================================================================
-============================================================================================================
-CONTROLLER===>
+### CONTROLLER===>
 [root@CONTROLLER ~(keystone_admin)]# hostname
 CONTROLLER.packstack.com
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+~~~
 
 [root@CONTROLLER ~(keystone_admin)]# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -32,9 +31,13 @@ CONTROLLER.packstack.com
        valid_lft forever preferred_lft forever
 [root@CONTROLLER ~(keystone_admin)]# 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
 
+~~~
 [root@CONTROLLER ~(keystone_admin)]# openstack-status
+~~~
+
+~~~
 == Nova services ==
 openstack-nova-api:                     active
 openstack-nova-compute:                 inactive  (disabled on boot)
@@ -139,20 +142,13 @@ Try 'nova help ' for more information.
 | 83f037a1-0fec-4651-a962-9018ce768066 | cirros_2020-01-01_15-19-51 | 02c0cc7ffbb549018a25545d8a1ad765 | SHUTOFF | -          | Shutdown    | private=10.10.10.149 |
 | 86d03e0b-bee3-4a76-8bd5-eeb967f15041 | cirros_2020-01-02_11-24-38 | 02c0cc7ffbb549018a25545d8a1ad765 | ACTIVE  | -          | Running     | private=10.10.10.184 |
 +--------------------------------------+----------------------------+----------------------------------+---------+------------+-------------+----------------------+
+~~~
 
-
-
-
-
-
-
-
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# openstack service list
+~~~
+
+~~~
 +----------------------------------+-----------+--------------+
 | ID                               | Name      | Type         |
 +----------------------------------+-----------+--------------+
@@ -165,14 +161,9 @@ Try 'nova help ' for more information.
 | aff7f6b96aaf4a13880dbecb019e9dcb | nova      | compute      |
 | e79344aea2df45bd83fdeef63a13e569 | keystone  | identity     |
 +----------------------------------+-----------+--------------+
+~~~
 
-
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# openstack network list
 +--------------------------------------+---------+--------------------------------------+
 | ID                                   | Name    | Subnets                              |
@@ -181,13 +172,13 @@ Try 'nova help ' for more information.
 | 58d686d6-e6a9-49f9-8e79-e00432be0bfd | private | 233411b7-e17c-48e2-b6ac-992aa2348653 |
 | db11d4fe-6955-4f54-8cae-ea14e2082e9d | khan    | aa794a23-233f-4a40-83dc-b3ea66225834 |
 +--------------------------------------+---------+--------------------------------------+
+~~~
 
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# openstack server list
+~~~
+
+~~~
 +--------------------------------------+----------------------------+---------+----------------------+--------------------------+---------+
 | ID                                   | Name                       | Status  | Networks             | Image                    | Flavor  |
 +--------------------------------------+----------------------------+---------+----------------------+--------------------------+---------+
@@ -195,18 +186,16 @@ Try 'nova help ' for more information.
 | 83f037a1-0fec-4651-a962-9018ce768066 | cirros_2020-01-01_15-19-51 | SHUTOFF | private=10.10.10.149 | cirros-0.3.4-x86_64-disk | m1.tiny |
 | 645050cb-329d-4f84-b208-c0e358f8316e | cirros_2019-12-31_08-07-07 | ACTIVE  | private=10.10.10.19  | cirros-0.3.4-x86_64-disk | m1.tiny |
 +--------------------------------------+----------------------------+---------+----------------------+--------------------------+---------+
+~~~
 
+### COMPUTE NODE: 
 
-
-
-
-
-======================================================================================================================================
-=========================================================================================================================================
-
+~~~
 [root@compute1 ~]# hostname
 compute1.packstack.com
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
+
+~~~
 [root@compute1 ~]# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -236,7 +225,13 @@ compute1.packstack.com
     link/ether 8e:91:cd:e3:64:02 brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet6 fe80::8c91:cdff:fee3:6402/64 scope link 
        valid_lft forever preferred_lft forever
+~~~
+
+~~~
 [root@compute1 ~]# openstack-status
+~~~
+
+~~~
 == Nova services ==
 openstack-nova-api:                     inactive  (disabled on boot)
 openstack-nova-compute:                 active
@@ -251,16 +246,14 @@ neutron-metadata-agent:                 inactive  (disabled on boot)
 openvswitch:                            active
 dbus:                                   active
 Warning novarc not sourced
+~~~
 
-
-
-===============================================================================================================
-=============================================================================================================
-
-
+~~~
 [root@compute2 ~]# hostname
 compute2.packstack.com
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
+
+~~~
 [root@compute2 ~]# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -290,13 +283,13 @@ compute2.packstack.com
     link/ether aa:22:37:73:4b:ce brd ff:ff:ff:ff:ff:ff link-netnsid 0
     inet6 fe80::a822:37ff:fe73:4bce/64 scope link 
        valid_lft forever preferred_lft forever
+~~~
 
-
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+~~~
 [root@compute2 ~]# openstack-status
+~~~
+
+~~~
 == Nova services ==
 openstack-nova-api:                     inactive  (disabled on boot)
 openstack-nova-compute:                 active
@@ -312,31 +305,26 @@ openvswitch:                            active
 dbus:                                   active
 Warning novarc not sourced
 [root@compute2 ~]# 
+~~~
 
-=================================================================================
-===================================================================================
+#### CONTROLLER NODE:-
 
+##### NOVA SERVICES:-
 
-
-
-
-CONTROLLER NODE:-
-
-I. NOVA
-
-SERVICES:-
 1. The NOVA service consists of the following services:-
 
+~~~
 [root@CONTROLLER ~(keystone_admin)]# systemctl -a | grep nova
   openstack-nova-api.service               loaded    active   running   OpenStack Nova API Server
   openstack-nova-conductor.service         loaded    active   running   OpenStack Nova Conductor Server
   openstack-nova-consoleauth.service       loaded    active   running   OpenStack Nova VNC console auth Server
   openstack-nova-novncproxy.service        loaded    active   running   OpenStack Nova NoVNC Proxy Server
   openstack-nova-scheduler.service         loaded    active   running   OpenStack Nova Scheduler Server
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
 
-PACKAGES:-
+2. PACKAGES:-
 
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -qa | grep nova
 openstack-nova-api-19.0.3-1.el7.noarch
 openstack-nova-scheduler-19.0.3-1.el7.noarch
@@ -348,33 +336,17 @@ openstack-nova-placement-api-19.0.3-1.el7.noarch
 openstack-nova-common-19.0.3-1.el7.noarch
 openstack-nova-console-19.0.3-1.el7.noarch
 openstack-nova-conductor-19.0.3-1.el7.noarch
+~~~
 
+3. CONFIGURATION FILES:-
 
-CONFIGURATION FILES:-
-
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-api-19.0.3-1.el7.noarch | grep "etc"
-+++++++++++++++++++++++++++++++++++++++++++
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-scheduler-19.0.3-1.el7.noarch | grep "etc"
-+++++++++++++++++++++++++++++++++++++++++++++
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql python2-nova-19.0.3-1.el7.noarch | grep "/etc"
-++++++++++++++++++++++++++++++++++++++++++++++
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-novncproxy-19.0.3-1.el7.noarch | grep "/etc"
-/etc/sysconfig/openstack-nova-novncproxy
-+++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -ql python2-novaclient-13.0.2-1.el7.noarch | grep "/etc"
 /etc/bash_completion.d
 /etc/bash_completion.d/nova
-++++++++++++++++++++++++++++++++++++++++++++++++++
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql puppet-nova-14.4.0-1.el7.noarch | grep "/etc"
-++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
 
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql puppet-nova-14.4.0-1.el7.noarch | grep "/etc"
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-placement-api-19.0.3-1.el7.noarch | grep "/etc"
-/etc/httpd/conf.d/00-nova-placement-api.conf
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-common-19.0.3-1.el7.noarch | grep "/etc"
 /etc/logrotate.d/openstack-nova
 /etc/nova
@@ -384,51 +356,44 @@ CONFIGURATION FILES:-
 /etc/nova/release
 /etc/nova/rootwrap.conf
 /etc/sudoers.d/nova
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~
 
+##### SUMMARY:-
 
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-console-19.0.3-1.el7.noarch | grep "/etc"
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. MAIN NOVA CONFIGURAION FILE:-
 
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-conductor-19.0.3-1.el7.noarch    | grep "/etc"
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-SUMMARY:-
-MAIN NOVA CONFIGURAION FILE:-
+~~~
 /etc/nova/nova.conf
+~~~
+2. Logs : 
 
-MAIN LOG FILE:-
-
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-nova-common-19.0.3-1.el7.noarch | grep "log"
-/etc/logrotate.d/openstack-nova
-/var/log/nova
-
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# cd /var/log/nova
 [root@CONTROLLER nova(keystone_admin)]# ls
 nova-api.log        nova-consoleauth.log  nova-novncproxy.log     nova-scheduler.log
 nova-conductor.log  nova-manage.log       nova-placement-api.log
 [root@CONTROLLER nova(keystone_admin)]# 
+~~~
 
 
+### NEUTRON SERVICES:-
 
-
-II. NEUTRON
-
-SERVICES:-
-
+~~~
 == neutron services ==
 neutron-server:                         active
 neutron-dhcp-agent:                     inactive  (disabled on boot)
 neutron-l3-agent:                       inactive  (disabled on boot)
 neutron-metadata-agent:                 inactive  (disabled on boot)
+~~~
 
+~~~
 [root@CONTROLLER ~(keystone_admin)]# systemctl -a | grep neutron
   neutron-server.service                loaded    active   running   OpenStack Neutron Server
+~~~
 
-PACKAGES:-
+1. PACKAGES:-
 
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -qa | grep -i neutron
 openstack-neutron-ml2-14.0.4-1.el7.noarch
 python2-neutronclient-6.12.0-1.el7.noarch
@@ -438,20 +403,18 @@ python2-neutron-lib-1.25.0-1.el7.noarch
 openstack-neutron-14.0.4-1.el7.noarch
 puppet-neutron-14.4.0-1.el7.noarch
 [root@CONTROLLER ~(keystone_admin)]# 
+~~~
 
-----------------------------
+2. CONFIGURATION FILES:-
 
-CONFIGURATION FILES:-
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-neutron-ml2-14.0.4-1.el7.noarch | grep '/etc'
 /etc/neutron/plugins/ml2
 /etc/neutron/plugins/ml2/ml2_conf.ini
 /etc/neutron/plugins/ml2/sriov_agent.ini
+~~~
 
-+++++++++++++++++++++++++++++++++++
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql python2-neutronclient-6.12.0-1.el7.noarch   | grep '/etc'
-++++++++++++++++++++++++++++++++
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-neutron-common-14.0.4-1.el7.noarch   | grep '/etc'
 /etc/logrotate.d/openstack-neutron
 /etc/neutron
@@ -462,15 +425,9 @@ CONFIGURATION FILES:-
 /etc/neutron/plugins
 /etc/neutron/rootwrap.conf
 /etc/sudoers.d/neutron
+~~~
 
-+++++++++++++++++++++++++++++++++
-
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql python2-neutron-14.0.4-1.el7.noarch  | grep '/etc'
-+++++++++++++++++++++++++++++++++++++
-
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql python2-neutron-lib-1.25.0-1.el7.noarch  | grep '/etc'
-++++++++++++++++++++++++++++++++++++++
-
+~~~
 [root@CONTROLLER ~(keystone_admin)]# rpm -ql openstack-neutron-14.0.4-1.el7.noarch | grep '/etc'
 /etc/neutron/conf.d/neutron-dhcp-agent
 /etc/neutron/conf.d/neutron-l3-agent
@@ -482,32 +439,25 @@ CONFIGURATION FILES:-
 /etc/neutron/dhcp_agent.ini
 /etc/neutron/l3_agent.ini
 /etc/neutron/metadata_agent.ini
+~~~
 
+3. SUMMARY:-
 
-++++++++++++++++++++++++++++++++++++++++
+** MAIN NEUTRON CONFIGURAION FILE:-
 
-[root@CONTROLLER ~(keystone_admin)]# rpm -ql puppet-neutron-14.4.0-1.el7.noarch | grep '/etc'
-+++++++++++++++++++++++++++++++++++++
-
-
-SUMMARY:-
-MAIN NEUTRON CONFIGURAION FILE:-
+~~~
 /etc/neutron/neutron.conf
-
 /etc/neutron/plugins/ml2/ml2_conf.ini
 /etc/neutron/plugins/ml2/sriov_agent.ini
+~~~
 
+** MAIN LOG FILE:-
 
-
-MAIN LOG FILE:-
-
-
-[root@CONTROLLER nova(keystone_admin)]# rpm -ql openstack-neutron-common-14.0.4-1.el7.noarch   | grep 'log'
-/etc/logrotate.d/openstack-neutron
-/var/log/neutron
+~~~
 [root@CONTROLLER nova(keystone_admin)]# cd /var/log/neutron/
 [root@CONTROLLER neutron(keystone_admin)]# ls
 server.log
+~~~
 
 
 
